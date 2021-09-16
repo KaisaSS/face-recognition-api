@@ -10,10 +10,8 @@ import { handleImage, handleApiCall } from "./controllers/image.js";
 const db = knex({
   client: "pg",
   connection: {
-    host: "postgresql-aerodynamic-78877",
-    user: "parvej",
-    password: "face123",
-    database: "face-recognition",
+    host: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
